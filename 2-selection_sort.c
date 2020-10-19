@@ -39,6 +39,7 @@ void selection_sort(int *array, size_t size)
  * swap - swaps two int positions in an array
  * @first: first position
  * @second: second position
+ * @array: array to be adjusted
  * Return: void
  */
 void swap(int **array, int first, int second)
