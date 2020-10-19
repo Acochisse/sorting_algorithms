@@ -11,7 +11,8 @@
 void selection_sort(int *array, size_t size)
 {
 
-	unsigned long int i, j, min_idx;
+	size_t i, j;
+	unsigned long int min_idx;
 
 	if (array == NULL)
 		return;
