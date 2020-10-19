@@ -11,22 +11,26 @@
 void selection_sort(int *array, size_t size)
 {
 
-	size_t i, j;
-	unsigned long int min_idx;
+	size_t low = 0, i = 0, j = 0;
 
-	if (array == NULL)
+	if (!array || size < 1)
 		return;
-	
-	for (i = 0; i < size - 1; i++)
+
+	while (j < size)
 	{
-		min_idx = i;
-		for (j = i + 1; j < size; j++)
+		i = low = j;
+		while (i < size)
 		{
-			if (array[j] < array[min_idx])
-				min_idx = j;
+			if (array[i] < array[low])
+				low = i;
+			i++;
 		}
-		swap(&array[min_idx], &array[i]);
-		print_array(array, size);
+		if (j - low != 0)
+		{
+			swap(&array, j, low);
+			print_array(array, size);
+		}
+		j++;
 	}
 }
 
@@ -37,11 +41,11 @@ void selection_sort(int *array, size_t size)
  * @second: second position
  * Return: void
  */
-void swap(int *first, int *second)
+void swap(int **array, int first, int second)
 {
 	int temp;
 
-	temp = *first;
-	*first = *second;
-	*second = temp;
+	temp = (*array)[first];
+	(*array)[first] = (*array)[second];
+	(*array)[second] = temp;
 }
