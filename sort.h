@@ -37,4 +37,5 @@ void quick_sort_hoare(int *array, size_t size);
 void swap(int **array, int first, int second);
 size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size);
 void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size);
+void smoothbrain(int *array, int min, int max, size_t size);
 #endif
