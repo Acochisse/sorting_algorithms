@@ -16,7 +16,7 @@ void heap_sort(int *array, size_t size)
 	{
 		smoothbrain(array, i, size, size);
 	}
-       	i = size - 1;
+	i = size - 1;
 	while (i > 0)
 	{
 		temp = array[i];
