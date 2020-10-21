@@ -4,7 +4,7 @@
  * shell_sort - sorts an array using the Knuth Method
  * @array: the array to be sort
  * @size: length of the array
- * 
+ *
  * Return: no return
  */
 
@@ -39,7 +39,6 @@ void shell_sort(int *array, size_t size)
 			i++;
 		}
 		print_array(array, size);
-		gap = (gap - 1) /3;
+		gap = (gap - 1) / 3;
 	}
-
 }
