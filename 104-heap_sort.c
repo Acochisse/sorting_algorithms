@@ -4,9 +4,7 @@
  * heap_sort - function that sorts by heap sort
  * @array: array to be sorted
  * @size: size of the array
- *
- *
- * Return: no return
+ * Return: none
  */
 void heap_sort(int *array, size_t size)
 {
@@ -14,7 +12,7 @@ void heap_sort(int *array, size_t size)
 
 	for (i = size / 2 - 1; i >= 0; i--)
 	{
-		smoothbrain(array, i, size, size);
+		do_it(array, i, size, size);
 	}
 	i = size - 1;
 	while (i > 0)
@@ -23,22 +21,22 @@ void heap_sort(int *array, size_t size)
 		array[i] = array[0];
 		array[0] = temp;
 		print_array(array, size);
-		smoothbrain(array, 0, i, size);
+		do_it(array, 0, i, size);
 		i--;
 	}
 }
 
 
 /**
- * smoothbrain - mounts the array into heap
+ * do_it - mounts the array into heap
  * @array: array to be sorted
  * @min: leftmost element in array
  * @max: rightmost element in array
  * @size: size of array
- * Return: no return
+ * Return: none
  */
 
-void smoothbrain(int *array, int min, int max, size_t size)
+void do_it(int *array, int min, int max, size_t size)
 {
 	int root, temp, right, left;
 
@@ -62,6 +60,6 @@ void smoothbrain(int *array, int min, int max, size_t size)
 		array[root] = array[min];
 		array[min] = temp;
 		print_array(array, size);
-		smoothbrain(array, root, max, size);
+		do_it(array, root, max, size);
 	}
 }
